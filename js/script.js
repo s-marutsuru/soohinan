@@ -81,7 +81,7 @@ function clickKankoMap(){
 
 // 避難所データ
 function addShelterData(){
-    $.getJSON("./data/避難施設データ_曽於市.geojson", function(data) {
+    $.getJSON("./data/避難施設データ_曽於市_位置修正20230807.geojson", function(data) {
         var geojson = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
                 var lat = feature.properties.fY;
