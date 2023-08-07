@@ -84,8 +84,8 @@ function addShelterData(){
     $.getJSON("./data/soo-hinanjyo2023.geojson", function(data) {
         var geojson = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
-                var lat = feature.properties.X;
-                var lng = feature.properties.Y;
+                var lat = feature.properties.Y;
+                var lng = feature.properties.X;
                 var marker = L.marker([lat,lng], {icon: shelterIcon}).addTo(map);
                 marker.bindPopup(feature.properties.col0);
                 marker_list.push(marker);
