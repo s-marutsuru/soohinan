@@ -81,11 +81,11 @@ function clickKankoMap(){
 
 // 避難所データ
 function addShelterData(){
-    $.getJSON("./data/避難施設データ_曽於市_位置修正20230807.geojson", function(data) {
+    $.getJSON("./data/soohinanzyo_20230807.geojson", function(data) {
         var geojson = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
-                var lat = feature.properties.fY;
-                var lng = feature.properties.fX;
+                var lat = feature.properties.newX;
+                var lng = feature.properties.newY;
                 var marker = L.marker([lat,lng], {icon: shelterIcon}).addTo(map);
                 marker.bindPopup(feature.properties.col0);
                 marker_list.push(marker);
